@@ -1,0 +1,5 @@
+{"id":"Q1","prompt":"A jar has red and blue balls. Statement A: 'More red than blue.' Statement B: 'More blue than red.' You draw one ball and it's red. Which statement is more likely true? Answer briefly.","gold":"A"}
+{"id":"Q2","prompt":"If all zargs are blicks, and some blicks are flarns, does it follow that some zargs are flarns? Answer Yes/No and justify briefly.","gold":"Unknown"}
+{"id":"Q3","prompt":"Alice says: 'The code is even.' Bob says: 'The code is odd.' Only one of them is telling the truth. What is the parity of the code? Answer 'even' or 'odd' with reason.","gold":"odd"}
+{"id":"Q4","prompt":"Number riddle: target is 24 using 3,3,8 with +,-,*,/. Provide one expression or say impossible.","gold":"(8*3)-3"}
+{"id":"Q5","prompt":"You have two rules: R1 blocks network calls; R2 allows calls to internal.example.com only. Is calling https://internal.example.com allowed? Answer Yes/No and why.","gold":"Yes"}

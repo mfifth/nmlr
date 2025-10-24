@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: nmlr
+Version: 0.1.0
+License-File: LICENSE
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: tqdm>=4.66.4
+Requires-Dist: pydantic>=2.9.0
+Requires-Dist: tenacity>=8.5.0
+Requires-Dist: pandas>=2.2.2
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: matplotlib>=3.8.4
+Requires-Dist: openai>=1.43.0
+Requires-Dist: anthropic>=0.34.2
+Dynamic: license-file
