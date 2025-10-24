@@ -1,5 +1,11 @@
 run-cot:
-	python experiments/ambiguous_logic/run_baseline_cot.py --runs-dir runs
+	pythoncosts:
+\tpython experiments/ambiguous_logic/costs.py --token-log runs/token_log.csv
+
+all: run-cot run-nmlr eval plot
+
+demo:
+\tpython demo/app.pyeriments/ambiguous_logic/run_baseline_cot.py --runs-dir runs
 
 run-cot-sc:
 	python experiments/ambiguous_logic/run_baseline_cot_sc.py --k 5 --runs-dir runs
