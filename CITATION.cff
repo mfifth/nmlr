@@ -2,20 +2,17 @@ cff-version: 1.2.0
 title: "Networked Multi-Layered Reasoning (NMLR)"
 message: "If you use this software, please cite it as below."
 type: software
+license: MIT
 authors:
   - family-names: Quinto
     given-names: Matt
-  - family-names: ChatGPT
-    given-names: Assistant
 version: "0.1.0"
-repository-code: "https://github.com/your-org/nmlr"
+repository-code: "https://github.com/mfifth/nmlr"
 preferred-citation:
   type: article
   title: "Networked Multi-Layered Reasoning (NMLR): A Verifier-Driven Graph Framework for Robust, Self-Correcting Intelligence"
   authors:
     - family-names: Quinto
       given-names: Matt
-    - family-names: ChatGPT
-      given-names: Assistant
   year: 2025
   journal: "arXiv"

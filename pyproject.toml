@@ -5,6 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nmlr"
 version = "0.1.0"
+license = "MIT"
+authors = [
+    {name = "Matt Quinto", email = "matt@quinto.com"},
+]
+description = "Networked Multi-Layered Reasoning (NMLR): A verifier-driven framework for robust LLM reasoning"
+readme = "README.md"
+requires-python = ">=3.11"
 dependencies = [
     "python-dotenv>=1.0.1",
     "tqdm>=4.66.4",
