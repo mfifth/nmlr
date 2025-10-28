@@ -67,6 +67,8 @@ This mirrors how humans solve complex problems:
 
 ## Quick Results
 
+After running experiments (`make all`), you'll see:
+
 ![Accuracy by Method](runs/accuracy_by_method.png)
 
 NMLR **outperforms** CoT and self-consistency CoT on ambiguous logic tasks by exploring reasoning space more fully and enforcing correctness checks.
@@ -74,6 +76,12 @@ NMLR **outperforms** CoT and self-consistency CoT on ambiguous logic tasks by ex
 ---
 
 ## Quick Start
+
+### Prerequisites
+
+- Python 3.11+
+- Virtual environment (recommended)
+- API keys for cloud providers (optional - Ollama works locally)
 
 ### 1. Setup Environment
 
@@ -117,7 +125,7 @@ make all
 
 * All experiment outputs saved in `runs/`
 * `summary.csv` shows exact-match accuracy
-* `accuracy_by_method.png` shows comparison chart
+* `accuracy_by_method.png` shows comparison chart (generated after `make plot`)
 * `token_log.csv` tracks API usage
 
 ---
@@ -152,8 +160,94 @@ See `costs.py` to customize provider rate assumptions.
   title={Networked Multi-Layered Reasoning (NMLR)},
   author={Quinto, Matt and ChatGPT Assistant},
   year={2025},
-  url={https://github.com/your-org/nmlr}
+  url={https://github.com/mfifth/nmlr}
 }
+```
+
+---
+
+## API Documentation
+
+### Core Classes
+
+- **`nmlr.search.nmlr_search()`**: Main search function that generates, verifies, and scores reasoning candidates
+- **`nmlr.scoring.LLMEvaluator`**: LLM-based scoring with rubric evaluation
+- **`nmlr.scoring.blended_scorer()`**: Combines LLM scores with heuristic penalties
+- **`nmlr.verifier.*`**: Verification classes (`NonEmptyAnswer`, `NoContradiction`, `AlwaysTrue`)
+- **`nmlr.llm_adapters.*`**: Provider classes (`OpenAIClient`, `AnthropicClient`, `GeminiClient`)
+
+### Configuration
+
+Environment variables:
+- `NMLR_PROVIDER`: LLM provider (ollama, openai, anthropic, xai, gemini)
+- `NMLR_MODEL`: Model name
+- Provider-specific API keys (OPENAI_API_KEY, etc.)
+
+---
+
+## Project Structure
+
+```
+nmlr/                      # Core engine
+├── __init__.py           # Package exports
+├── candidate.py          # Candidate reasoning class
+├── llm_adapters.py       # LLM provider integrations
+├── scoring.py            # Scoring and evaluation
+├── search.py             # Main NMLR search algorithm
+└── verifier.py           # Verification rules
+
+experiments/ambiguous_logic/  # Benchmark tasks
+├── data.jsonl            # Test cases
+├── run_baseline_cot.py   # CoT baseline
+├── run_baseline_cot_sc.py # Self-consistency CoT
+├── run_nmlr.py           # NMLR implementation
+├── metrics.py            # Evaluation scripts
+└── costs.py              # Cost analysis
+
+tests/                    # Unit tests
+demo/                     # Web demo interface
+├── app.py                # Gradio application
+└── requirements.txt      # Demo dependencies
+
+docs/                     # Documentation
+├── CHANGELOG.md          # Version history
+├── CONTRIBUTING.md       # Development guide
+├── CODE_OF_CONDUCT.md    # Community standards
+├── SECURITY.md           # Security policy
+└── RELEASE_CHECKLIST.md  # Release process
+
+.github/                  # CI/CD workflows
+notebooks/                # Research walkthroughs
+runs/                     # Experiment outputs
+```
+
+---
+
+## Costs & Logging
+
+```bash
+make costs
+```
+
+See `experiments/ambiguous_logic/costs.py` to customize provider rate assumptions.
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+- **API quota errors**: Switch to Ollama local provider (`NMLR_PROVIDER=ollama`)
+- **Import errors**: Ensure `pip install -e .` after cloning
+- **Test failures**: Check Python version (3.11+ required)
+- **Model not found**: Verify model name and provider configuration
+- **Demo won't start**: Install demo requirements with `pip install -r demo/requirements.txt`
+
+### Prerequisites
+
+- Python 3.11+
+- Virtual environment recommended
+- API keys for cloud providers (optional, Ollama works locally)
 ```
 
 ---
