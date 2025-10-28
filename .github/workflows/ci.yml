@@ -10,5 +10,5 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - run: pip install -e .
-      - run: pip install pytest
-      - run: pytest -q
+      - run: pip install pytest pytest-cov
+      - run: pytest -p pytest_cov --cov=nmlr --cov-report=term-missing

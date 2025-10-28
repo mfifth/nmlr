@@ -14,5 +14,9 @@ nmlr.egg-info/requires.txt
 nmlr.egg-info/top_level.txt
 nmlr/examples/aisentinel_demo.py
 nmlr/examples/symbolic_demo.py
+tests/test_integration.py
+tests/test_llm_adapters.py
 tests/test_pruning.py
+tests/test_scoring.py
+tests/test_search.py
 tests/test_symbolic.py

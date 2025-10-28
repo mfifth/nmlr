@@ -20,3 +20,7 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["nmlr*"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=nmlr --cov-report=term-missing"
+testpaths = ["tests"]

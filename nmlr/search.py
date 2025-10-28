@@ -28,7 +28,7 @@ def nmlr_search(initial: Candidate,
         if not new_frontier:
             break
 
-        new_frontier.sort(key=lambda c: -c.score)
+        new_frontier.sort(key=lambda c: c.score)
         frontier = new_frontier[:beam_size]
         results.extend(frontier)
 
